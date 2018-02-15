@@ -9,10 +9,10 @@ http://css-tricks.com/example/index.html
 $( document ).ready(function() {
 	console.log( "ready!" );
 	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
-	
+	//console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 	var height = window.innerHeight;
 	$('#myLink').css("height",height);
-	
+	var pathname = window.location.host;
 	
 	$("header ul li, header .logo img, footer .logo img, footer .menu div").click( function () {
 		var path = window.location.pathname.split('/');
@@ -21,9 +21,11 @@ $( document ).ready(function() {
 		if(path[path.length-1] == data){
 		
 		}else if( this.dataset.name == "index") {
-			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
+			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
+			window.location.pathname = ""; //powrot na glowna
 		} else {
-			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
+			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
+			window.location.href = "/pages/" + data;
 		}
 		
 	});
