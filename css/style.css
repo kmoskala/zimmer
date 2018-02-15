@@ -1,0 +1,112 @@
+/*
+input,
+textarea {
+    @include input-placeholder {
+        color: $grey;
+    }
+}
+*/
+.center {
+  text-align: center; }
+
+/*
+@mixin linColors ($link, $visit, $hover, $active)
+@mixin prefix($property, $val)
+@mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
+*/
+#myLink {
+  width: 100%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 22px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; }
+  #myLink .informator {
+    text-align: center;
+    background-color: #333444;
+    width: 50%;
+    margin: auto;
+    padding: 200px 0;
+    opacity: 1;
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%; }
+    #myLink .informator .close {
+      color: white;
+      top: 5px;
+      right: 10px;
+      font-size: 22px;
+      line-height: 12px;
+      position: absolute; }
+
+header, footer {
+  padding: 0;
+  background-color: #000;
+  color: #fff; }
+  header .menuContainer, footer .menuContainer {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch; }
+  header .logo, footer .logo {
+    cursor: pointer; }
+  header ul, footer ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px; }
+    header ul li, footer ul li {
+      display: inline-block;
+      padding: 37px; }
+      header ul li a, footer ul li a {
+        color: #fff; }
+        header ul li a:visited, footer ul li a:visited {
+          color: #333; }
+        header ul li a:hover, footer ul li a:hover {
+          color: #ebebeb; }
+        header ul li a:active, footer ul li a:active {
+          color: #222; }
+      header ul li:hover, footer ul li:hover {
+        background-color: #333;
+        cursor: pointer; }
+
+footer {
+  position: absolute;
+  left: 0;
+  width: 100%; }
+  footer .logo {
+    cursor: pointer; }
+  footer .menu {
+    padding: 15px 0; }
+    footer .menu div {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 34px;
+      cursor: pointer; }
+      footer .menu div:hover {
+        -webkit-transition: 0.5s ease;
+        -moz-transition: 0.5s ease;
+        -ms-transition: 0.5s ease;
+        transition: 0.5s ease;
+        color: #333; }
+  footer .info {
+    padding: 15px 0;
+    text-align: right; }
+
+#slider {
+  margin: 0;
+  padding: 0; }
+  #slider .image {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+
+/*# sourceMappingURL=style.css.map */

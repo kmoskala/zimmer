@@ -1,0 +1,46 @@
+@mixin linColors ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+@mixin prefix($property, $val) {
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  #{$property}: $val;
+}
+
+
+/*
+input,
+textarea {
+    @include input-placeholder {
+        color: $grey;
+    }
+}
+*/
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch ) {
+  @include prefix(display, flex);
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $alignItems;
+
+}
