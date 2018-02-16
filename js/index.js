@@ -21,25 +21,81 @@ $( document ).ready(function() {
 		if(path[path.length-1] == data){
 		
 		}else if( this.dataset.name == "index") {
-			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
-			window.location.pathname = ""; //powrot na glowna
+			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
+			// window.location.pathname = ""; //powrot na glowna
 		} else {
-			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
-			window.location.href = "/pages/" + data;
+			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
+			// window.location.href = "/pages/" + data;
 		}
 		
 	});
-	
-	$(".owl-carousel").owlCarousel({
+	var owl = $("#slider .owl-carousel");
+	owl.owlCarousel({
 		loop:true,
 		margin:0,
 		items:1,
 		center: true,
-		nav: true,
-		dots: true
+		autoplay: true
 		
 	});
+	// $('#slider .next').click(function() {
+	// 	owl.trigger('next.owl.carousel', [300]);
+	// });
+	// $('#slider .prev').click(function() {
+	// 	owl.trigger('prev.owl.carousel', [300]);
+	// });
+	var owl2 = $(".squerContainer.owl-carousel");
+	owl2.owlCarousel({
+		loop:true,
+		margin:0,
+		autoplay: true,
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			998: {
+				items: 3
+			}
+		}
+	});
+	$('#content .section .next').click(function() {
+		owl2.trigger('prev.owl.carousel', [300]);
+	});
+	$('#content .section .prev').click(function() {
+		owl2.trigger('next.owl.carousel', [300]);
+	});
+	var squerHeight = $(".squer").width();
+	$(".layer, .squer .image, #content .section .arrow").height(squerHeight);
+	$(".layer, .squer .image").width(squerHeight);
 	
+	$(".squer").hover(
+		function () {
+			$(this).find(".layer").fadeIn("fast","swing",function () {
+				$(this).css({
+					"display": "block",
+					"cursor": "pointer"
+				});
+			});
+			
+			console.log("this " + $(this));
+		}
+		,
+		function () {
+			$(this).find(".layer").fadeOut("fast","swing",function () {
+				$(this).css({
+					"display": "none",
+					"cursor": "pointer"
+				});
+			});
+			console.log("wyszedlem");
+		}
+
+	);
+
+	//alert();
 	var connectPage = $('#myLink');
 	// $('.close').click(function () {
 	// 	connectPage.fadeToggle("slow", function () {

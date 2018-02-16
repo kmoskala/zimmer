@@ -15,7 +15,7 @@ textarea {
 @mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
 */
 #myLink {
-  width: 100%;
+  width: 80%;
   margin: auto;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -74,8 +74,67 @@ header, footer {
         header ul li a:active, footer ul li a:active {
           color: #222; }
       header ul li:hover, footer ul li:hover {
+        -webkit-transition: 0.5s ease;
+        -moz-transition: 0.5s ease;
+        -ms-transition: 0.5s ease;
+        transition: 0.5s ease;
         background-color: #333;
         cursor: pointer; }
+
+#content .section {
+  padding-bottom: 25px;
+  position: relative; }
+  #content .section .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-size: 34px;
+    padding: 25px 0; }
+  #content .section .arrow {
+    font-size: 34px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 64px;
+    bottom: 0;
+    z-index: 2; }
+    #content .section .arrow.next {
+      background-image: url("../img/keyboard-right-arrow-button.png");
+      right: -100px; }
+    #content .section .arrow.prev {
+      background-image: url("../img/keyboard-left-arrow-button.png");
+      left: -100px; }
+  #content .section .squer {
+    position: relative; }
+    #content .section .squer:hover {
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -ms-transition: 0.5s ease;
+      transition: 0.5s ease; }
+    #content .section .squer .layer {
+      position: absolute;
+      top: 0px;
+      z-index: 22;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.8);
+      font-size: 32px;
+      display: none;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -ms-transition: 0.5s ease;
+      transition: 0.5s ease; }
+      #content .section .squer .layer span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%); }
+    #content .section .squer .image {
+      cursor: pointer; }
 
 footer {
   position: absolute;
@@ -102,11 +161,35 @@ footer {
 
 #slider {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3); }
+  #slider .owl-carousel {
+    margin: 0;
+    padding: 0; }
   #slider .image {
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
+  #slider .textPlace {
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 100px 200px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; }
+
+#map {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%; }
 
 /*# sourceMappingURL=style.css.map */

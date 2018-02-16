@@ -1,5 +1,6 @@
-@import "mixins";
-@import "unversal-style";
+@import "_mixins";
+@import "_unversal-style";
+
 
 
 /*
@@ -13,7 +14,7 @@ body {
 
 
 #myLink {
-  width: 100%;
+  width: 80%;
   margin: auto;
   background: rgba(0,0,0,0.8);
   color: #fff;
@@ -70,6 +71,7 @@ header, footer {
       @include linColors(#fff, #333, #ebebeb, #222);
 
       &:hover {
+        @include prefix(transition, 0.5s ease);
         background-color: #333;
         cursor: pointer;
       }
@@ -77,7 +79,79 @@ header, footer {
     }
   }
 }
+#content {
 
+  .section {
+    padding-bottom: 25px;
+    position: relative;
+    .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      font-size: 34px;
+      padding: 25px 0;
+
+    }
+
+    .arrow {
+      font-size: 34px;
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      position: absolute;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      //background-color: rgba(0, 0, 0, 0.3);
+      width: 64px;
+      bottom: 0;
+      z-index: 2;
+
+      &.next {
+        background-image: url("../img/keyboard-right-arrow-button.png");
+        right: -100px;
+      }
+      &.prev {
+        background-image: url("../img/keyboard-left-arrow-button.png");
+        left: -100px;
+      }
+    }
+    .squer {
+      position: relative;
+      &:hover {
+        @include prefix(transition, 0.5s ease);
+
+      }
+      .layer {
+        position: absolute;
+        top: 0px;
+        z-index: 22;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0,0,0,0.8);
+        font-size: 32px;
+        display: none;
+        @include prefix(transition, 0.5s ease);
+
+
+      span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+
+
+      }
+      .image {
+        cursor: pointer;
+
+
+      }
+    }
+  }
+
+}
 footer {
   position: absolute;
   left: 0;
@@ -111,11 +185,67 @@ footer {
 #slider {
   margin: 0;
   padding: 0;
+  position: relative;
+  background-color: rgba(0,0,0,0.3);
 
+  .owl-carousel {
+    margin: 0;
+    padding: 0;
+  }
   .image {
     height: 500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
+  .textPlace {
+    font-size: 34px;
+      font-weight: bold;
+      color: #fff;
+      position: absolute;
+      height: 500px;
+      background-color: rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 100px 200px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+  }
+
+  //.arrow {
+  //  font-size: 34px;
+  //  font-weight: bold;
+  //  color: rgba(0, 0, 0, 0.6);
+  //  cursor: pointer;
+  //  position: absolute;
+  //  height: 500px;
+  //  background-position: center;
+  //  background-repeat: no-repeat;
+  //  background-size: contain;
+  //  background-color: rgba(0,0,0,0.3);
+  //  width: 64px;
+  //  top: 0;
+  //  z-index: 2;
+  //
+  //
+  //  &.next {
+  //      background-image: url("../img/keyboard-right-arrow-button.png");
+  //      right: 0px;
+  //  }
+  //  &.prev {
+  //    background-image: url("../img/keyboard-left-arrow-button.png");
+  //    left: 0px;
+  //  }
+  //}
+
+
+
+}
+
+#map {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }
