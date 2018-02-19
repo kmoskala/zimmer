@@ -9,9 +9,28 @@
 @mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
 */
 body {
-  //@include linColors(#000,red,blue,green);
+
 }
 
+button {
+  padding: 15px 0;
+  width: 60%;
+  background-color: transparent;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: bold;
+  border: 3px solid #333;
+  margin: 25px 0 0px;
+  @include prefix(transition, 0.5s ease );
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: #333;
+
+  }
+}
 
 #myLink {
   width: 80%;
@@ -48,16 +67,15 @@ body {
   }
 }
 
-header, footer {
+header {
   padding:0;
   background-color: #000;
   color: #fff;
   .menuContainer {
-    @include flexc-container(row, nowrap, space-between, stretch);
+    @include flexc-container(row, nowrap, center, stretch);
+    text-transform: uppercase;
   }
-  .logo {
-    cursor: pointer;
-  }
+
 
   ul {
     list-style: none;
@@ -72,26 +90,36 @@ header, footer {
 
       &:hover {
         @include prefix(transition, 0.5s ease);
-        background-color: #333;
+        //background-color: #333;
+        text-decoration: underline;
         cursor: pointer;
       }
-
+      &.logo {
+        cursor: pointer;
+        padding: 0;
+      }
     }
   }
 }
 #content {
 
   .section {
-    padding-bottom: 25px;
+    padding-bottom: 150px;
     position: relative;
+    text-align: center;
     .title {
       text-transform: uppercase;
       font-weight: bold;
       color: #333;
       text-align: center;
       font-size: 34px;
-      padding: 25px 0;
+      padding: 50px 0;
 
+    }
+    .info-paragraph {
+      text-align: center;
+      font-size: 22px;
+      line-height: 44px;
     }
 
     .arrow {
@@ -120,7 +148,7 @@ header, footer {
     .squer {
       position: relative;
       &:hover {
-        @include prefix(transition, 0.5s ease);
+        //@include prefix(transition, 0.5s ease);
 
       }
       .layer {
@@ -145,6 +173,7 @@ header, footer {
       }
       .image {
         cursor: pointer;
+        background-color: #66EAFF;
 
 
       }
@@ -156,14 +185,18 @@ footer {
   position: absolute;
   left: 0;
   width: 100%;
-  //padding: 25px 0;
+  padding:0;
+  background-color: #000;
+  color: #fff;
+  .menuContainer {
+    @include flexc-container(row, nowrap, space-between, stretch);
+    text-transform: uppercase;
+  }
   .logo {
     cursor: pointer;
-    //width: 20%;
   }
   .menu {
     padding: 15px 0;
-    //width: 40%;
     div {
       font-size: 18px;
       font-weight: bold;
@@ -182,18 +215,16 @@ footer {
   }
 }
 
-#slider {
+#parlax , .parlax {
   margin: 0;
   padding: 0;
   position: relative;
   background-color: rgba(0,0,0,0.3);
 
-  .owl-carousel {
-    margin: 0;
-    padding: 0;
-  }
+
   .image {
-    height: 500px;
+    //height: 500px;
+    background-attachment: fixed; //parllax effect
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -203,14 +234,37 @@ footer {
       font-weight: bold;
       color: #fff;
       position: absolute;
-      height: 500px;
+      //height: 500px;
       background-color: rgba(0,0,0,0.7);
       text-align: center;
       padding: 100px 200px;
-      top: 0;
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       z-index: 2;
+
+    .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      font-size: 34px;
+      padding: 25px 0;
+    }
+    p {
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 44px
+    }
+    button {
+      color: #fff;
+      border-color: #fff;
+
+      &:hover {
+        border-color: transparent;
+        color: #333;
+        background-color: #fff;
+      }
+    }
   }
 
   //.arrow {
@@ -248,4 +302,16 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
+}
+
+#goTop {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  background-position: center center;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  cursor: pointer;
 }

@@ -14,7 +14,7 @@ $( document ).ready(function() {
 	$('#myLink').css("height",height);
 	var pathname = window.location.host;
 	
-	$("header ul li, header .logo img, footer .logo img, footer .menu div").click( function () {
+	$("header ul li, footer .logo img, footer .menu div, #content button").click( function () {
 		var path = window.location.pathname.split('/');
 		var data = this.dataset.name + ".html";
 		
@@ -29,21 +29,7 @@ $( document ).ready(function() {
 		}
 		
 	});
-	var owl = $("#slider .owl-carousel");
-	owl.owlCarousel({
-		loop:true,
-		margin:0,
-		items:1,
-		center: true,
-		autoplay: true
-		
-	});
-	// $('#slider .next').click(function() {
-	// 	owl.trigger('next.owl.carousel', [300]);
-	// });
-	// $('#slider .prev').click(function() {
-	// 	owl.trigger('prev.owl.carousel', [300]);
-	// });
+	
 	var owl2 = $(".squerContainer.owl-carousel");
 	owl2.owlCarousel({
 		loop:true,
@@ -109,9 +95,26 @@ $( document ).ready(function() {
 	    footerHeight = $("footer").outerHeight();
 	
 	var height = Math.max( body.scrollHeight, body.offsetHeight,
-		html.clientHeight, html.scrollHeight, html.offsetHeight );
-	console.log(footerHeight, height, body.scrollHeight, body.offsetHeight,
-		html.clientHeight, html.scrollHeight, html.offsetHeight);
+		html.clientHeight, html.scrollHeight, html.offsetHeight, html.height);
+	console.log(body.scrollHeight, body.offsetHeight,
+		html.clientHeight, html.scrollHeight, html.offsetHeight, "max: ", height);
+	var windowHeight = window.innerHeight;
+	$("#parlax .image").height(windowHeight - $('header').outerHeight());
 	
-	$("footer").css("top",height - footerHeight);
+	
+	$('#goTop').click(function () {
+		$('html, body').animate({
+			scrollTop: $("header").offset().top
+		}, 700);
+		
+	});
+	
+	console.log($("header").is(":visible"));
+	// $("footer").css("top",height - footerHeight);
 });
+
+// $(window).scroll(function() {
+// 	$('html, body').animate({
+// 		scrollTop: $("#content").offset().top
+// 	}, 2000);
+// });

@@ -14,6 +14,25 @@ textarea {
 @mixin prefix($property, $val)
 @mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
 */
+button {
+  padding: 15px 0;
+  width: 60%;
+  background-color: transparent;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: bold;
+  border: 3px solid #333;
+  margin: 25px 0 0px;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer; }
+  button:hover {
+    color: #fff;
+    background-color: #333; }
+
 #myLink {
   width: 80%;
   margin: auto;
@@ -43,54 +62,61 @@ textarea {
       line-height: 12px;
       position: absolute; }
 
-header, footer {
+header {
   padding: 0;
   background-color: #000;
   color: #fff; }
-  header .menuContainer, footer .menuContainer {
+  header .menuContainer {
     -webkit-display: flex;
     -moz-display: flex;
     -ms-display: flex;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: stretch; }
-  header .logo, footer .logo {
-    cursor: pointer; }
-  header ul, footer ul {
+    justify-content: center;
+    align-items: stretch;
+    text-transform: uppercase; }
+  header ul {
     list-style: none;
     padding: 0px;
     margin: 0px; }
-    header ul li, footer ul li {
+    header ul li {
       display: inline-block;
       padding: 37px; }
-      header ul li a, footer ul li a {
+      header ul li a {
         color: #fff; }
-        header ul li a:visited, footer ul li a:visited {
+        header ul li a:visited {
           color: #333; }
-        header ul li a:hover, footer ul li a:hover {
+        header ul li a:hover {
           color: #ebebeb; }
-        header ul li a:active, footer ul li a:active {
+        header ul li a:active {
           color: #222; }
-      header ul li:hover, footer ul li:hover {
+      header ul li:hover {
         -webkit-transition: 0.5s ease;
         -moz-transition: 0.5s ease;
         -ms-transition: 0.5s ease;
         transition: 0.5s ease;
-        background-color: #333;
+        text-decoration: underline;
         cursor: pointer; }
+      header ul li.logo {
+        cursor: pointer;
+        padding: 0; }
 
 #content .section {
-  padding-bottom: 25px;
-  position: relative; }
+  padding-bottom: 150px;
+  position: relative;
+  text-align: center; }
   #content .section .title {
     text-transform: uppercase;
     font-weight: bold;
     color: #333;
     text-align: center;
     font-size: 34px;
-    padding: 25px 0; }
+    padding: 50px 0; }
+  #content .section .info-paragraph {
+    text-align: center;
+    font-size: 22px;
+    line-height: 44px; }
   #content .section .arrow {
     font-size: 34px;
     font-weight: bold;
@@ -111,11 +137,6 @@ header, footer {
       left: -100px; }
   #content .section .squer {
     position: relative; }
-    #content .section .squer:hover {
-      -webkit-transition: 0.5s ease;
-      -moz-transition: 0.5s ease;
-      -ms-transition: 0.5s ease;
-      transition: 0.5s ease; }
     #content .section .squer .layer {
       position: absolute;
       top: 0px;
@@ -134,12 +155,26 @@ header, footer {
         top: 50%;
         transform: translateY(-50%) translateX(-50%); }
     #content .section .squer .image {
-      cursor: pointer; }
+      cursor: pointer;
+      background-color: #66EAFF; }
 
 footer {
   position: absolute;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  padding: 0;
+  background-color: #000;
+  color: #fff; }
+  footer .menuContainer {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    text-transform: uppercase; }
   footer .logo {
     cursor: pointer; }
   footer .menu {
@@ -159,37 +194,61 @@ footer {
     padding: 15px 0;
     text-align: right; }
 
-#slider {
+#parlax, .parlax {
   margin: 0;
   padding: 0;
   position: relative;
   background-color: rgba(0, 0, 0, 0.3); }
-  #slider .owl-carousel {
-    margin: 0;
-    padding: 0; }
-  #slider .image {
-    height: 500px;
+  #parlax .image, .parlax .image {
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
-  #slider .textPlace {
+  #parlax .textPlace, .parlax .textPlace {
     font-size: 34px;
     font-weight: bold;
     color: #fff;
     position: absolute;
-    height: 500px;
     background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 100px 200px;
-    top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     z-index: 2; }
+    #parlax .textPlace .title, .parlax .textPlace .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      font-size: 34px;
+      padding: 25px 0; }
+    #parlax .textPlace p, .parlax .textPlace p {
+      font-weight: normal;
+      font-size: 22px;
+      line-height: 44px; }
+    #parlax .textPlace button, .parlax .textPlace button {
+      color: #fff;
+      border-color: #fff; }
+      #parlax .textPlace button:hover, .parlax .textPlace button:hover {
+        border-color: transparent;
+        color: #333;
+        background-color: #fff; }
 
 #map {
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%; }
+
+#goTop {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  background-position: center center;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  text-align: center;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
