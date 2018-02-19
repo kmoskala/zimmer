@@ -27,7 +27,8 @@ button {
 
   &:hover {
     color: #fff;
-    background-color: #333;
+    background-color: #000;
+    border-color: #000;
 
   }
 }
@@ -74,10 +75,18 @@ header {
   .menuContainer {
     @include flexc-container(row, nowrap, center, stretch);
     text-transform: uppercase;
+
+    .icon {
+      display: none;
+    }
+
+    #menuResposive {
+      display: none;
+    }
   }
 
 
-  ul {
+  #menuNormal  {
     list-style: none;
     padding: 0px;
     margin: 0px;
@@ -267,34 +276,6 @@ footer {
     }
   }
 
-  //.arrow {
-  //  font-size: 34px;
-  //  font-weight: bold;
-  //  color: rgba(0, 0, 0, 0.6);
-  //  cursor: pointer;
-  //  position: absolute;
-  //  height: 500px;
-  //  background-position: center;
-  //  background-repeat: no-repeat;
-  //  background-size: contain;
-  //  background-color: rgba(0,0,0,0.3);
-  //  width: 64px;
-  //  top: 0;
-  //  z-index: 2;
-  //
-  //
-  //  &.next {
-  //      background-image: url("../img/keyboard-right-arrow-button.png");
-  //      right: 0px;
-  //  }
-  //  &.prev {
-  //    background-image: url("../img/keyboard-left-arrow-button.png");
-  //    left: 0px;
-  //  }
-  //}
-
-
-
 }
 
 #map {
@@ -314,4 +295,17 @@ footer {
   bottom: 30px;
   text-align: center;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 998px) {
+
+
+
+}
+@media only screen and (max-width: 768px) {
+
 }

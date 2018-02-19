@@ -31,7 +31,8 @@ button {
   cursor: pointer; }
   button:hover {
     color: #fff;
-    background-color: #333; }
+    background-color: #000;
+    border-color: #000; }
 
 #myLink {
   width: 80%;
@@ -76,29 +77,33 @@ header {
     justify-content: center;
     align-items: stretch;
     text-transform: uppercase; }
-  header ul {
+    header .menuContainer .icon {
+      display: none; }
+    header .menuContainer #menuResposive {
+      display: none; }
+  header #menuNormal {
     list-style: none;
     padding: 0px;
     margin: 0px; }
-    header ul li {
+    header #menuNormal li {
       display: inline-block;
       padding: 37px; }
-      header ul li a {
+      header #menuNormal li a {
         color: #fff; }
-        header ul li a:visited {
+        header #menuNormal li a:visited {
           color: #333; }
-        header ul li a:hover {
+        header #menuNormal li a:hover {
           color: #ebebeb; }
-        header ul li a:active {
+        header #menuNormal li a:active {
           color: #222; }
-      header ul li:hover {
+      header #menuNormal li:hover {
         -webkit-transition: 0.5s ease;
         -moz-transition: 0.5s ease;
         -ms-transition: 0.5s ease;
         transition: 0.5s ease;
         text-decoration: underline;
         cursor: pointer; }
-      header ul li.logo {
+      header #menuNormal li.logo {
         cursor: pointer;
         padding: 0; }
 

@@ -109,6 +109,15 @@ $( document ).ready(function() {
 		
 	});
 	
+	$(window).on("scroll", function() {
+		var scrollPos = $(window).scrollTop();
+		if (scrollPos <= $('header').outerHeight()) {
+			 $("#goTop").fadeOut();
+		} else {
+			 $("#goTop").fadeIn();
+		}
+	});
+	
 	console.log($("header").is(":visible"));
 	// $("footer").css("top",height - footerHeight);
 });
@@ -118,3 +127,12 @@ $( document ).ready(function() {
 // 		scrollTop: $("#content").offset().top
 // 	}, 2000);
 // });
+
+function myFunction() {
+	var x = document.getElementById("menuRes");
+	if (x.className === "topnav") {
+		x.className += " responsive";
+	} else {
+		x.className = "topnav";
+	}
+}
