@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
 		<title>Formularz</title>
 		<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		<link rel="shortcut icon" href="img/favicon.ico">
@@ -32,13 +33,29 @@
 			</div>
 		</div>
 		<header>
-			<div class="container menuContainer">
-				<div class="logo">
-					<img src="img/logo.png" height="98" alt="logo" data-name="index">
+			<div class="container menuContainer" >
+				<div id="menuResposive">
+					<div class="logo" data-name="index">
+						<img src="img/logo.png" height="98" alt="logo">
+					</div>
+					
+					<div class="menuIcon">&#9776; </div>
+					<div class="clearfix"></div>
+					<ul class="menu">
+						<li data-name="about">O nas</li>
+						<li data-name="offer">Oferta</li>
+						<li data-name="portfolio">Portfolio</li>
+						<li data-name="contact">Kontakt</li>
+					
+					</ul>
 				</div>
-				<ul class="menu">
+				<div class="clearfix"></div>
+				<ul class="menu" id="menuNormal">
 					<li data-name="about">O nas</li>
 					<li data-name="offer">Oferta</li>
+					<li class="logo" data-name="index">
+						<img src="img/logo.png" height="98" alt="logo">
+					</li>
 					<!--<li data-name="store">Store</li>-->
 					<!--<li data-name="gallery">Gallery</li>-->
 					<li data-name="portfolio">Portfolio</li>
@@ -52,73 +69,61 @@
 		</header>
 		<div class="clearfix"></div>
 		
-		<div id="slider">
-			<div class="owl-carousel container-fluid">
-				<div class="image" style="background-image: url('img/2.jpg');"></div>
-				<div class="image" style="background-image: url('img/5.jpg');"></div>
-				<div class="image" style="background-image: url('img/6.jpg');"></div>
-			</div>
+		<div id="parlax" class="container-fluid">
+			
+			<div class="image" style="background-image: url('img/2.jpg');"></div>
+			
 			<div class="textPlace container">
-				Wnętrza, które tworzy Firma Zimmer są połączeniem dobrego smaku, wyrafinowania i jakości, dlatego w naszych realizacjach wykorzystujemy najlepsze technologie i materiały.
+				Jesteśmy odpowiedzią na stale rosnące potrzeby i coraz większe wymagania w zakresie kompleksowego projektowania mieszkań i domów oraz realizacji mebli na indywidualne zamówienie.
 			</div>
 			<!--<div class="arrow next" ></div>-->
 			<!--<div class="arrow prev"></div>-->
 		</div>
 		<div class="clearfix"></div>
 		
-		<div id="content" class="container">
-			<div class="section">
+		<div id="content" >
+			<div class="section container">
 				<div class="title">Oferta</div>
-				<div class="squerContainer row">
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Klienci indywidualni</span></div>
-						<div class="image" style="background-image: url('img/2.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Lokale użetczności publicznej</span></div>
-						<div class="image" style="background-image: url('img/5.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Pozostałe usługi</span></div>
-						<div class="image" style="background-image: url('img/6.jpg');"></div>
-					</div>
-				</div>
+				<p class="info-paragraph">
+					Kompleksowe projektowanie wnętrz mieszkalnych (kuchnie, łazienki, pokoje, pomieszczeni gospodarcze, wnęki, wnętrza typu open-space, lofty itd.) i użyteczności publicznej (biura, przychodnie, kancelarie, salony kosmetyczne, fryzjerskie, sanatoria, restauracje, baseny, sale konferencyjne i bankietowe, sklepy.
+					<br/><br/>
+					
+					Pierwsze spotkanie z klientem jest niezobowiązujące. Spotkanie to odbywa się studiu lub u klienta. Klient pokrywa jedynie koszt dojazdu, które są zwracane w przypadku zamówienia projektu.<br/><br/>
+					
+					Każdy projekt jest wyceniany indywidualnie w zależności od stopnia jego skomplikowania i wielkości projektowanych pomieszczeń.
+				</p>
+				<button data-name="offer">Zobacz</button>
 			</div>
-			<div class="section">
-				<div class="title">Nasze Realizcje</div>
-				<div class="squerContainer row owl-carousel">
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Kuchnie i jadalnie</span></div>
-						<div class="image" style="background-image: url('img/2.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Łazienki</span></div>
-						<div class="image" style="background-image: url('img/5.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Sypialnie i salony</span></div>
-						<div class="image" style="background-image: url('img/6.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Dla biznesu</span></div>
-						<div class="image" style="background-image: url('img/5.jpg');"></div>
-					</div>
-					<div class="col-md-4 col-xs-12 squer">
-						<div class="layer"><span>Inne</span></div>
-						<div class="image" style="background-image: url('img/6.jpg');"></div>
-					</div>
+			<div class="clearfix"></div>
+			<div class="parlax container-fluid">
+				<div class="image" style="background-image: url('img/5.jpg'); height: 800px"></div>
+				<div class="textPlace container">
+					<div class="title">Nasze realizacje</div>
+					<p>Wnętrza, które tworzy Firma Zimmer są połączeniem dobrego smaku, wyrafinowania i jakości, dlatego w naszych realizacjach wykorzystujemy najlepsze technologie i materiały.</p>
+					<button data-name="portfolio">Zobacz</button>
 				</div>
-				<div class="arrow next" ></div>
-				<div class="arrow prev"></div>
+				
+			
 			</div>
+			<div class="clearfix"></div>
 			
 			
-			
+			<div class="section container">
+				<div class="title">Kontakt</div>
+				<p class="info-paragraph">
+					Jeśli masz jakiekolwiek pytania, <br/>
+					coś Cie zaintrygowało lub chciałbyś nawiązać z nami współprace, <br/>
+					skontaktuj się z nami za pośrednictwem formularza kontaktowego.<br/>
+					Odpowiemy najszybciej jak to tylko możliwe.
+				</p>
+				<button data-name="contact">Zobacz</button>
+			</div>
+			<div class="clearfix"></div>
+		
+		
 		</div>
 		<div class="clearfix"></div>
-		<div id="map" class="container-fluid"style="background-image: url('img/snazzy-image2.png');">
-			<!--<img src="img/snazzy-image.png">-->
-		</div>
+		
 		
 		
 		<footer>
@@ -144,5 +149,6 @@
 			
 			</div>
 		</footer>
+	<div id="goTop" style="background-image: url('img/up.png');"></div>
 	</body>
 </html>

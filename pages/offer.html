@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Formularz</title>
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="shortcut icon" href="../img/favicon.ico">
@@ -30,13 +30,29 @@
 	</div>
 </div>
 <header>
-	<div class="container menuContainer">
-		<div class="logo">
-			<img src="../img/logo.png" height="98" alt="logo" data-name="index">
+	<div class="container menuContainer" >
+		<div id="menuResposive">
+			<div class="logo" data-name="index">
+				<img src="../img/logo.png" height="98" alt="logo">
+			</div>
+			
+			<div class="menuIcon">&#9776; </div>
+			<div class="clearfix"></div>
+			<ul class="menu">
+				<li data-name="about">O nas</li>
+				<li data-name="offer">Oferta</li>
+				<li data-name="portfolio">Portfolio</li>
+				<li data-name="contact">Kontakt</li>
+			
+			</ul>
 		</div>
-		<ul class="menu">
+		<div class="clearfix"></div>
+		<ul class="menu" id="menuNormal">
 			<li data-name="about">O nas</li>
 			<li data-name="offer">Oferta</li>
+			<li class="logo" data-name="index">
+				<img src="../img/logo.png" height="98" alt="logo">
+			</li>
 			<!--<li data-name="store">Store</li>-->
 			<!--<li data-name="gallery">Gallery</li>-->
 			<li data-name="portfolio">Portfolio</li>
@@ -47,9 +63,166 @@
 	</div>
 
 
-</header>
 
-oferta
+
+</header>
+<div id="offerSlider" class="owl-carousel container-fluid">
+	<div class="item">
+		<div class="image" style="background-image: url('../img/2.jpg');"></div>
+		
+		<div class="textPlace container">
+			Kompleksowe projektowanie wnętrz mieszkalnych (kuchnie, łazienki, pokoje, pomieszczeni gospodarcze, wnęki, wnętrza typu open-space, lofty itd.) i użyteczności publicznej (biura, przychodnie, kancelarie, salony kosmetyczne, fryzjerskie, sanatoria, restauracje, baseny, sale konferencyjne i bankietowe, sklepy.
+		</div>
+	</div>
+	<div class="item">
+		<div class="image" style="background-image: url('../img/2.jpg');"></div>
+		
+		<div class="textPlace container">
+			
+			Pierwsze spotkanie z klientem jest niezobowiązujące. Spotkanie to odbywa się studiu lub u klienta. Klient pokrywa jedynie koszt dojazdu, które są zwracane w przypadku zamówienia projektu.
+		</div>
+	</div>
+	<div class="item">
+		<div class="image" style="background-image: url('../img/2.jpg');"></div>
+		
+		<div class="textPlace container">
+			Każdy projekt jest wyceniany indywidualnie w zależności od stopnia jego skomplikowania i wielkości projektowanych pomieszczeń.
+		</div>
+	</div>
+	
+	<!--<div class="arrow next" ></div>-->
+	<!--<div class="arrow prev"></div>-->
+</div>
+<div class="clearfix"></div>
+
+<div id="content" >
+	<div class="section container">
+		<div class="title">Oferta</div>
+		<table class="offerTable">
+			<tr>
+				<td>Blaty</td>
+				<td>corianowe , granitowe , drewniane , prosformingowe  firm lupus, pfleiderer, biuro styl</td>
+			</tr>
+			<tr>
+				<td>Fronty</td>
+				<td>drewniane , fornirowane, lakierowane, akrylowe, mdf- foliowany  oraz z płyty melaminowej oklejanej pcv lub okówane aluminium</td>
+			</tr>
+			<tr>
+				<td>Akcesoria meblowe</td>
+				<td>firma blum , peka ,hettich ,siro, maty sibu, gamet</td>
+			</tr>
+			<tr>
+				<td>Sprzęt AGD</td>
+				<td>firma blanco , aeg , electrolux , de dietrich , falmec,elica  , faber , smeg ,bosch , siemens ,teka samsung ,candy , beko, amica , whirpool ,zanussi, mastercook, villero&boch</td>
+			</tr>
+			
+			
+		</table>
+	</div>
+	
+	
+
+	<div class="clearfix"></div>
+	
+	<div class="section money container">
+		<div class="title">Cennik</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-12 one-option" style="background-image: url('../img/2.jpg');" data-name="indywidualClient">
+				<div>
+					<p>KLIENCI INDYWIDUALNI</p>
+				
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 one-option" style="background-image: url('../img/5.jpg');" data-name="useLokum">
+				<div>
+					<p>LOKALE UŻYTECZNOŚCI PUBLICZNEJ</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 one-option" style="background-image: url('../img/6.jpg');" data-name="another">
+				<div >
+					<p>POZOSTAŁE USŁUGI</p>
+				</div>
+			</div>
+		</div>
+		
+		<table id="indywidualClient" class="offerTable">
+			<tr>
+				<td>PROJEKT ARANŻACJI KUCHNI</td>
+				<td>80.00/m2  projektowanego pomieszczenia</td>
+			</tr>
+			<tr>
+				<td>PROJEKT ARANŻACJI ŁAZIENKI</td>
+				<td>80.00/m2 projektowanego pomieszczenia</td>
+			</tr>
+			<tr>
+				<td>DOBÓR KOLORÓW, TAPET, PŁTYEK</td>
+				<td>100.00 – 800,00 cena za cały obiekt</td>
+			</tr>
+			<tr>
+				<td>RAZMIESZCZENIE OŚWIETLENIA</td>
+				<td>100.00 – 700.00 cena za cały obiekt</td>
+			</tr>
+			<tr>
+				<td>ROZMIESZCZENIE OŚWIETLENIA Z DOBOREM KONKRETNYCH MODELI</td>
+				<td>200.00 – 900.00 cena za cały obiekt</td>
+			</tr>
+		
+		
+		</table>
+		
+		<table id="useLokum" class="offerTable">
+			<tr>
+				<td>PROJEKT RESTAURACJI I BARÓW</td>
+				<td>150.00/m2 projektowanego obiektu</td>
+			</tr>
+			<tr>
+				<td>PROJEKT  POWIERZCHNI BIUROWEJ</td>
+				<td>130/m2 projektowanego obiektu</td>
+			</tr>
+			<tr>
+				<td>PROJEIEKT  SKLEPU</td>
+				<td>80.00/m2 projektowanego obiektu</td>
+			</tr>
+			<tr>
+				<td>PROJEKTOWANIE INNYCH OBIEKTÓW UŻYTECZNOŚCI PUBLICZNEJ</td>
+				<td>cena do uzgodnienia</td>
+			</tr>
+		
+		
+		</table>
+		
+		<table id="another" class="offerTable">
+			<tr>
+				<td>PORADA W PRACOWNI</td>
+				<td>40.00/godz.</td>
+			</tr>
+			<tr>
+				<td>KONSULTACJA U KLIENTA , LUB W WYBRANYM MIEJSCU</td>
+				<td>60.00-120.00 + DOJAZD</td>
+			</tr>
+			<tr>
+				<td>NADZÓR  AUTORSKI</td>
+				<td>150.00-200.00 za wizytę w Krakowie</td>
+			</tr>
+			<tr>
+				<td>MEBLE AUTORSKIEA</td>
+				<td>1000,00-2000,00 za/szt.</td>
+			</tr>
+			
+		
+		
+		</table>
+		
+		
+		
+		<div class="star">*Podane ceny nie są ofertą wiążącą tylko orientacyjną. Podane ceny są cenami netto.</div>
+	</div>
+	
+	
+	
+	<div class="clearfix"></div>
+
+</div>
 <footer>
 	<div class="container menuContainer">
 		<div class="logo">
@@ -73,5 +246,7 @@ oferta
 	
 	</div>
 </footer>
+<div id="goTop" style="background-image: url('../img/up.png');"></div>
+
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
 	<title>Formularz</title>
 	<link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="shortcut icon" href="../img/favicon.ico">
@@ -30,25 +31,142 @@
 	</div>
 </div>
 <header>
-	<div class="container menuContainer">
-		<div class="logo">
-			<img src="../img/logo.png" height="98" alt="logo" data-name="index">
+	<div class="container menuContainer" >
+		<div id="menuResposive">
+			<div class="logo" data-name="index">
+				<img src="../img/logo.png" height="98" alt="logo">
+			</div>
+			<div class="menuIcon">&#9776; </div>
+			<div class="clearfix"></div>
+			<ul class="menu">
+				<li data-name="about">O nas</li>
+				<li data-name="offer">Oferta</li>
+				<li data-name="portfolio">Portfolio</li>
+				<li data-name="contact">Kontakt</li>
+			</ul>
 		</div>
-		<ul class="menu">
+		<div class="clearfix"></div>
+		<ul class="menu" id="menuNormal">
 			<li data-name="about">O nas</li>
 			<li data-name="offer">Oferta</li>
-			<!--<li data-name="store">Store</li>-->
-			<!--<li data-name="gallery">Gallery</li>-->
+			<li class="logo" data-name="index">
+				<img src="../img/logo.png" height="98" alt="logo">
+			</li>
 			<li data-name="portfolio">Portfolio</li>
 			<li data-name="contact">Kontakt</li>
-		
 		</ul>
+	</div>
+</header>
+<div id="parlax" class="container-fluid">
+	
+	<div class="image" style="background-image: url('../img/2.jpg');"></div>
+	
+	<div class="textPlace container">
+		Firma Zimmer działa na rynku już od 1993 i jest odpowiedzią na stale rosnące potrzeby i coraz większe wymagania w zakresie kompleksowego projektowania mieszkań i domów oraz realizacji mebli na indywidualne zamówienie.
+	</div>
+	<!--<div class="arrow next" ></div>-->
+	<!--<div class="arrow prev"></div>-->
+</div>
+<div class="clearfix"></div>
+
+<div id="content" >
+	<div class="section container">
+		<div class="title ">Nasi projektanci</div>
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				<div class="photo" style="background-image: url('../img/portret.jpg')"></div>
+				<div class="name">Beata Wereszczyńska</div>
+				<div class="about">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio at dui pretium malesuada. Ut nec pulvinar eros. Integer dignissim mauris a lacus bibendum, nec efficitur est aliquam. Ut sit amet feugiat lacus. Vivamus aliquam dolor odio, vitae luctus quam elementum vitae. Aliquam ac metus quam. Nulla vitae augue augue. Fusce condimentum ante nec enim vulputate, sit amet iaculis nulla cursus. Integer dapibus arcu nunc, quis molestie risus molestie at. Fusce massa libero, facilisis sit amet convallis a, auctor vel odio. Vivamus luctus est imperdiet metus pellentesque commodo.
+				
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<div class="photo" style="background-image: url('../img/portret2.jpg')"></div>
+				<div class="name">Marta Zimmer</div>
+				<div class="about">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio at dui pretium malesuada. Ut nec pulvinar eros. Integer dignissim mauris a lacus bibendum, nec efficitur est aliquam. Ut sit amet feugiat lacus. Vivamus aliquam dolor odio, vitae luctus quam elementum vitae. Aliquam ac metus quam. Nulla vitae augue augue. Fusce condimentum ante nec enim vulputate, sit amet iaculis nulla cursus. Integer dapibus arcu nunc, quis molestie risus molestie at. Fusce massa libero, facilisis sit amet convallis a, auctor vel odio. Vivamus luctus est imperdiet metus pellentesque commodo.
+				
+				</div>
+			</div>
+		</div>
 	
 	</div>
-
-
-</header>
-o nas
+	<div class="parlax aboutText container-fluid">
+		<div class="image" style="background-image: url('../img/5.jpg'); height: 800px"></div>
+		<div class="textPlace container">
+			<div class="title">Pare słów o nas</div>
+			<p class="">Zakres działań, w zależności od potrzeb klienta, może zawierać kompleksowy projekt wraz z nadzorem lub też sam projekt, aranżację wnętrza lub jednorazową poradę.<br/><br/>
+				
+				
+				
+				Każde zlecenie jest nowym wyzwaniem. Wnętrza, które tworzy Firma Zimmer są połączeniem dobrego smaku, wyrafinowania i jakości, dlatego w naszych realizacjach wykorzystujemy najlepsze technologie i materiały. Współpracujemy w tym zakresie z najlepszymi producentami. Dzięki otwarciu na dialogi i w trosce o klienta, tworzone wnętrza są funkcjonalne i estetyczne. Doskonała znajomość historii sztuki, sprawia, że projektowane wnętrza są bardzo spójne stylowo, jeśli takie jest zamierzenie.
+				
+				<br/><br/>
+				
+				W firmie Zimmer uzyskają Państwo profesjonalną poradę. Specjalnie dla Państwa wykonamy projekt, dobierzemy kolorystykę, zaproponujemy oświetlenie oraz stosowane do wykończenia wnętrza materiały.
+				
+				<br/><br/>
+				
+				Jeśli więc odpowiada Państwu profil i charakter działalności Firmy Zimmer, zapraszamy do współpracy.</p>
+		</div>
+	
+	
+	</div>
+	
+	<div class="section container">
+		<div class="title">Nasi partnerzy</div>
+		<div id="slider" class="owl-carousel">
+			<div class="item">
+				<a href="https://www.blum.com/pl/pl/" target="_blank">
+					<img src="../img/blum.png" alt="/" width="146"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://www.aeg.pl/" target="_blank">
+					<img src="../img/aeg.png" alt="/" width="178" />
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://www.electrolux.pl/" target="_blank">
+					<img src="../img/electrolux.png" alt="/" width="309"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://comitor.pl/#slide1" target="_blank">
+					<img src="../img/comitor.png" alt="/" width="196"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="http://www.falmecpolska.pl/" target="_blank">
+					<img src="../img/falmec.png" alt="/" width="202"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="http://syljus.pl/" target="_blank">
+					<img src="../img/syljus.png" alt="/" width="145"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="http://www.candy.pl/pl_PL/" target="_blank">
+					<img src="../img/candy.png" alt="/" width="186" />
+				</a>
+			</div>
+			<div class="item">
+				<a href="http://www.hoover.pl/pl_PL/" target="_blank">
+					<img src="../img/hover.png" alt="/" width="71"/>
+				</a>
+			</div>
+			<div class="item">
+				<a href="https://www.maxkuchnie.pl/" target="_blank">
+					<img src="../img/max.png" alt="/" width="118"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	
+</div>
 <footer>
 	<div class="container menuContainer">
 		<div class="logo">
@@ -72,5 +190,7 @@ o nas
 	
 	</div>
 </footer>
+<div id="goTop" style="background-image: url('../img/up.png');"></div>
+
 </body>
 </html>
