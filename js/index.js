@@ -5,16 +5,85 @@ http://css-tricks.com/example/index.html
 	window.location.pathname = "example/index.html"
 
 * */
+function isPhone() {
+	var windowWidth = window.innerWidth;
+	if (windowWidth < 768) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function isMobile() {
+	
+	var windowWidth = window.innerWidth;
+	if (windowWidth < 999) {
+		return true;
+	} else {
+		return false;
+	}
+	
+}
+$(window).resize(function () {
+		init();
+});
+
+function init() {
+	goTop();
+	$("#content .parlax.aboutText .image").height($("#content .parlax.aboutText .textPlace").outerHeight() +1);
+	
+	var windowHeight = window.innerHeight;
+	$("#parlax .image").height(windowHeight - $('header').outerHeight());
+	
+	
+	var mobile = isMobile();
+	if (!mobile) {
+		console.log("nie tel");
+		if (!$('#menuNormal').is(':visible')) {
+			$('#menuNormal').css('display', 'block');
+		}
+		$("#menuResposive").css('display', 'none');
+		$('header .menuContainer').removeClass("container-fluid").addClass("container");
+		
+	} else {
+		console.log("telef");
+		if (!$('#menuResposive').is(':visible')) {
+			$('#menuResposive').css('display', 'block');
+		}
+		$("#menuNormal").css('display', 'none');
+		$('header .menuContainer').removeClass("container").addClass("container-fluid");
+		
+	}
+	$("#content .section .one-option, #content .section .one-option div").height($("#content .section .one-option").outerWidth());
+	
+}
+function closeMenu(){
+	$('header .menuContainer #menuResposive ul').fadeOut(350);
+}
 
 $( document ).ready(function() {
-	console.log( "ready!" );
+	init();
+	
+	$(document.body).click( function() {
+		closeMenu();
+	});
+	
+	$("header .menuContainer #menuResposive .menuIcon").on('click', function (e) {
+		e.stopPropagation();
+		if($("header .menuContainer #menuResposive ul").is(':visible')) {
+			$("header .menuContainer #menuResposive ul").fadeOut(500);
+		} else {
+			$("header .menuContainer #menuResposive ul").fadeIn(500);
+			
+		}
+	});
+	
 	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
 	//console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
 	var height = window.innerHeight;
 	$('#myLink').css("height",height);
 	var pathname = window.location.host;
 	
-	$("header ul li, footer .logo img, footer .menu div, #content button").click( function () {
+	$("header ul li,header .menuContainer #menuResposive .logo, footer .logo img, footer .menu div, #content button").click( function () {
 		var path = window.location.pathname.split('/');
 		var data = this.dataset.name + ".html";
 		
@@ -30,11 +99,12 @@ $( document ).ready(function() {
 		
 	});
 	
-	var owl2 = $(".squerContainer.owl-carousel");
+	var owl2 = $("#slider.owl-carousel");
 	owl2.owlCarousel({
 		loop:true,
-		margin:0,
+		margin:20,
 		autoplay: true,
+		autoWidth:true,
 		responsive: {
 			0: {
 				items: 1
@@ -43,53 +113,47 @@ $( document ).ready(function() {
 				items: 2
 			},
 			998: {
-				items: 3
+				items: 4
 			}
 		}
 	});
-	$('#content .section .next').click(function() {
-		owl2.trigger('prev.owl.carousel', [300]);
+	var owl = $("#offerSlider.owl-carousel");
+	owl.owlCarousel({
+		loop:true,
+		margin: 0,
+		autoplay: true,
+		items: 1
 	});
-	$('#content .section .prev').click(function() {
-		owl2.trigger('next.owl.carousel', [300]);
-	});
-	var squerHeight = $(".squer").width();
-	$(".layer, .squer .image, #content .section .arrow").height(squerHeight);
-	$(".layer, .squer .image").width(squerHeight);
-	
-	$(".squer").hover(
-		function () {
-			$(this).find(".layer").fadeIn("fast","swing",function () {
-				$(this).css({
-					"display": "block",
-					"cursor": "pointer"
-				});
-			});
-			
-			console.log("this " + $(this));
-		}
-		,
-		function () {
-			$(this).find(".layer").fadeOut("fast","swing",function () {
-				$(this).css({
-					"display": "none",
-					"cursor": "pointer"
-				});
-			});
-			console.log("wyszedlem");
-		}
-
-	);
-
-	//alert();
-	var connectPage = $('#myLink');
-	// $('.close').click(function () {
-	// 	connectPage.fadeToggle("slow", function () {
-	// 		this.css("display", "none");
-	// 	});
-	//
-	//
+	// //sterowanie za pomoca strzalek
+	// $('#content .section .next').click(function() {
+	// 	owl2.trigger('prev.owl.carousel', [300]);
 	// });
+	// $('#content .section .prev').click(function() {
+	// 	owl2.trigger('next.owl.carousel', [300]);
+	// });
+	
+	$("#content .section .one-option").click(function () {
+		var myId = this.dataset.name;
+		
+		if($('#content .section.money table').is(':visible')) {
+			$('#content .section.money table').css('display','none').fadeOut(300);
+			$('#content .section .one-option div').css('opacity', '0.7');
+		}
+		$("#" + myId).css('display', 'block').fadeIn();
+		$(this).children().css('opacity', '1');
+		$('#content .money .star').css('display','block');
+		
+		console.log(isPhone());
+		if(isPhone()) {
+			$('html, body').animate({
+				scrollTop: $('#'+myId).offset().top
+			}, 700);
+		}
+		
+	});
+	
+	
+	
 	var body = document.body,
 		html = document.documentElement,
 	    footerHeight = $("footer").outerHeight();
@@ -103,36 +167,28 @@ $( document ).ready(function() {
 	
 	
 	$('#goTop').click(function () {
-		$('html, body').animate({
-			scrollTop: $("header").offset().top
-		}, 700);
-		
+		scrollingTop();
 	});
 	
 	$(window).on("scroll", function() {
-		var scrollPos = $(window).scrollTop();
-		if (scrollPos <= $('header').outerHeight()) {
-			 $("#goTop").fadeOut();
-		} else {
-			 $("#goTop").fadeIn();
-		}
+		goTop();
 	});
 	
-	console.log($("header").is(":visible"));
-	// $("footer").css("top",height - footerHeight);
+	
 });
 
-// $(window).scroll(function() {
-// 	$('html, body').animate({
-// 		scrollTop: $("#content").offset().top
-// 	}, 2000);
-// });
 
-function myFunction() {
-	var x = document.getElementById("menuRes");
-	if (x.className === "topnav") {
-		x.className += " responsive";
+function goTop() {
+	var scrollPos = $(window).scrollTop();
+	if (scrollPos <= $('header').outerHeight()) {
+		$("#goTop").fadeOut();
 	} else {
-		x.className = "topnav";
+		$("#goTop").fadeIn();
 	}
+
+}
+function scrollingTop() {
+	$('html, body').animate({
+		scrollTop: $("header").offset().top
+	}, 700);
 }
