@@ -31,9 +31,43 @@ function init() {
 	goTop();
 	$("#content .parlax.aboutText .image").height($("#content .parlax.aboutText .textPlace").outerHeight() +1);
 	
+	var height = window.innerHeight;
+	$('#myLink').css("height",height);
+	
+	$('#myLink .owl-carousel .item').height(window.innerHeight - 200);
+	
 	var windowHeight = window.innerHeight;
 	$("#parlax .image").height(windowHeight - $('header').outerHeight());
 	
+	$(".gallery .one-image").height($('.gallery .one-image').outerWidth());
+	
+	
+	$(".gallery-Menu .one-category").click(function () {
+		var myId = this.dataset.name;
+		console.log(myId);
+		//"pogas" zakladki i wylacz galerie
+		if($('.gallery').is(':visible')) {
+			$('.gallery').css('display','none').fadeOut(300);
+			$(this).siblings().css({
+				'background-color': '#fff',
+				'color': '#000'
+			});
+		}
+		//wyswietl galerie i zaznacz w jakiej kat jestes
+		$(".gallery#" + myId).css('display', 'flex');
+		$(".gallery .one-image").height($('.gallery#'+myId+' .one-image').outerWidth());
+		$(this).css({
+			'background-color': '#000',
+			'color': '#fff'
+		});
+		
+		console.log(isPhone());
+		if(isPhone()) {
+			$('html, body').animate({
+				scrollTop: $('#'+myId).offset().top
+			}, 700);
+		}
+	});
 	
 	var mobile = isMobile();
 	if (!mobile) {
@@ -43,7 +77,7 @@ function init() {
 		}
 		$("#menuResposive").css('display', 'none');
 		$('header .menuContainer').removeClass("container-fluid").addClass("container");
-		
+		$(".gallery-Menu .one-category").height($(".gallery-Menu .one-category").outerWidth()/2);
 	} else {
 		console.log("telef");
 		if (!$('#menuResposive').is(':visible')) {
@@ -51,7 +85,7 @@ function init() {
 		}
 		$("#menuNormal").css('display', 'none');
 		$('header .menuContainer').removeClass("container").addClass("container-fluid");
-		
+		$(".gallery-Menu .one-category").height();
 	}
 	$("#content .section .one-option, #content .section .one-option div").height($("#content .section .one-option").outerWidth());
 	
@@ -77,10 +111,12 @@ $( document ).ready(function() {
 		}
 	});
 	
+	
+	
+	
 	var actualURL = window.location.protocol +  window.location.host + "/" + window.location.pathname;
 	//console.log("protocol ", window.location.protocol," host ", window.location.host, " pathname ",window.location.pathname);
-	var height = window.innerHeight;
-	$('#myLink').css("height",height);
+	
 	var pathname = window.location.host;
 	
 	$("header ul li,header .menuContainer #menuResposive .logo, footer .logo img, footer .menu div, #content button").click( function () {
@@ -90,11 +126,11 @@ $( document ).ready(function() {
 		if(path[path.length-1] == data){
 		
 		}else if( this.dataset.name == "index") {
-			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
-			// window.location.pathname = ""; //powrot na glowna
+			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/" + data;
+			window.location.pathname = ""; //powrot na glowna
 		} else {
-			window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
-			// window.location.href = "/pages/" + data;
+			// window.location.href = window.location.protocol + path[0] +"/" + path[1] + "/" + path[2] + "/pages/" + data;
+			window.location.href = "/pages/" + data;
 		}
 		
 	});
@@ -102,9 +138,9 @@ $( document ).ready(function() {
 	var owl2 = $("#slider.owl-carousel");
 	owl2.owlCarousel({
 		loop:true,
-		margin:20,
+		margin:10,
 		autoplay: true,
-		autoWidth:true,
+		// autoWidth:true,
 		responsive: {
 			0: {
 				items: 1
@@ -132,6 +168,7 @@ $( document ).ready(function() {
 	// 	owl2.trigger('next.owl.carousel', [300]);
 	// });
 	
+	
 	$("#content .section .one-option").click(function () {
 		var myId = this.dataset.name;
 		
@@ -152,7 +189,32 @@ $( document ).ready(function() {
 		
 	});
 	
+	//galeria
 	
+	
+	
+	
+	
+	
+	$(".gallery .one-image").click(function () {
+		var myId = this.dataset.name;
+		$('#myLink').css('display','block');
+		$('#myLink .informator').css('display', 'none');
+		$('#myLink .informator.' + myId).css('display','block');
+		$("#goTop").hide();
+		
+		
+	});
+	var sliderGalerry = $('#myLink .owl-carousel');
+	sliderGalerry.owlCarousel({
+		loop:true,
+		margin: 0,
+		autoplay: true,
+		items: 1
+	});
+	$("#myLink .informator .close").click(function () {
+		$('#myLink').css('display','none');
+	});
 	
 	var body = document.body,
 		html = document.documentElement,
