@@ -14,6 +14,28 @@ textarea {
 @mixin prefix($property, $val)
 @mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
 */
+form textarea {
+  height: 400px; }
+form input, form textarea {
+  width: 100%;
+  font-size: 22px;
+  border: 1px solid #e3e3e3;
+  margin: 25px 0 0px;
+  padding: 15px;
+  outline: none; }
+  form input ::-webkit-input-placeholder, form textarea ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #000; }
+  form input ::-moz-placeholder, form textarea ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #333; }
+  form input :-ms-input-placeholder, form textarea :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #333; }
+  form input :-moz-placeholder, form textarea :-moz-placeholder {
+    /* Firefox 18- */
+    color: #333; }
+
 button {
   padding: 15px 0;
   width: 60%;
@@ -35,26 +57,31 @@ button {
     border-color: #000; }
 
 #myLink {
-  width: 80%;
+  width: 100%;
   margin: auto;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 22px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   display: none; }
   #myLink .informator {
     text-align: center;
-    background-color: #333444;
-    width: 50%;
+    background-color: #000;
+    width: 80%;
     margin: auto;
-    padding: 200px 0;
+    padding: 15px;
     opacity: 1;
     position: absolute;
     transform: translateY(-50%) translateX(-50%);
     top: 50%;
     left: 50%; }
+    #myLink .informator .owl-carousel .item {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
     #myLink .informator .close {
       color: white;
       top: 5px;
@@ -145,6 +172,15 @@ header {
     line-height: 44px; }
   #content .section #slider {
     padding: 50px 0px; }
+    #content .section #slider .item a img {
+      max-width: 100%;
+      width: auto;
+      margin: auto; }
+  #content .section .about {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 34px; }
   #content .section .row .photo {
     background-size: cover;
     background-position: center;
@@ -221,6 +257,56 @@ header {
         transform: translateX(-50%) translateY(-50%); }
   #content .section .star {
     display: none; }
+
+.gallery-Menu {
+  padding: 0;
+  margin: 0;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: stretch; }
+  .gallery-Menu .one-category {
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    flex-basis: 20%;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 24px;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    transition: 0.5s ease; }
+    .gallery-Menu .one-category:hover {
+      background-color: #000;
+      color: #fff; }
+    .gallery-Menu .one-category p {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      text-align: center; }
+
+.gallery {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  display: none; }
+  .gallery .one-image {
+    width: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 footer {
   position: absolute;
@@ -331,6 +417,10 @@ footer {
     font-size: 18px;
     margin: 25px 0 0px; }
 
+  input, textarea {
+    padding: 5px !important;
+    font-size: 18px !important; }
+
   header .menuContainer {
     display: block !important;
     height: 98px;
@@ -419,7 +509,58 @@ footer {
         text-align: center; }
         footer .menuContainer .info p {
           width: 60%;
-          margin: auto; } }
+          margin: auto; }
+
+  .gallery-Menu {
+    padding: 0;
+    margin: 0;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch; }
+    .gallery-Menu .one-category {
+      cursor: pointer;
+      color: #000;
+      background-color: #fff;
+      flex-basis: 100%;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding: 30px;
+      -webkit-transition: 0.5s ease;
+      -moz-transition: 0.5s ease;
+      -ms-transition: 0.5s ease;
+      transition: 0.5s ease; }
+      .gallery-Menu .one-category:hover {
+        background-color: #000;
+        color: #fff; }
+      .gallery-Menu .one-category p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center; }
+
+  .gallery {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    display: none; }
+    .gallery .one-image {
+      width: 33.33%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; } }
 @media only screen and (max-width: 768px) {
   button {
     width: 100%; }
@@ -438,6 +579,23 @@ footer {
     width: 30px;
     height: 30px;
     right: 15px;
-    bottom: 15px; } }
+    bottom: 15px; }
+
+  .gallery {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    display: none; }
+    .gallery .one-image {
+      width: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; } }
 
 /*# sourceMappingURL=style.css.map */
