@@ -1,6 +1,6 @@
 @import "_mixins";
 @import "_unversal-style";
-
+// blue 41A8AE
 
 
 /*
@@ -11,7 +11,34 @@
 body {
 
 }
+form {
+  textarea {
+    height: 400px;
+  }
+  input, textarea {
+    width: 100%;
+    font-size: 22px;
+    //font-weight: bold;
+    border: 1px solid #e3e3e3;
+    margin: 25px 0 0px;
+    padding: 15px;
+    outline: none;
 
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #000;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #333;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #333;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #333;
+    }
+  }
+
+}
 button {
   padding: 15px 0;
   width: 60%;
@@ -150,6 +177,7 @@ header {
     padding-bottom: 100px;
     position: relative;
     text-align: center;
+
     .title {
       text-transform: uppercase;
       font-weight: bold;
@@ -171,6 +199,7 @@ header {
           img {
             max-width: 100%;
             width: auto;
+            margin: auto;
           }
         }
       }
@@ -460,9 +489,13 @@ footer {
 
 @media only screen and (max-width: 998px) {
   button {
-    padding: 5px 0;
+    padding: 5px 0 ;
     font-size: 18px;
     margin: 25px 0 0px;
+  }
+  input, textarea {
+    padding: 5px !important;
+    font-size: 18px !important;
   }
   header {
     .menuContainer {
@@ -662,6 +695,7 @@ footer {
           line-height: 28px;
         }
       }
+
     }
   }
   #goTop {

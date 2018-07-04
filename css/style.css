@@ -14,6 +14,28 @@ textarea {
 @mixin prefix($property, $val)
 @mixin flexc-container($direction: row, $wrap: nowrap, $justify: flex-start, $alignItems: stretch )
 */
+form textarea {
+  height: 400px; }
+form input, form textarea {
+  width: 100%;
+  font-size: 22px;
+  border: 1px solid #e3e3e3;
+  margin: 25px 0 0px;
+  padding: 15px;
+  outline: none; }
+  form input ::-webkit-input-placeholder, form textarea ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #000; }
+  form input ::-moz-placeholder, form textarea ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #333; }
+  form input :-ms-input-placeholder, form textarea :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #333; }
+  form input :-moz-placeholder, form textarea :-moz-placeholder {
+    /* Firefox 18- */
+    color: #333; }
+
 button {
   padding: 15px 0;
   width: 60%;
@@ -152,7 +174,8 @@ header {
     padding: 50px 0px; }
     #content .section #slider .item a img {
       max-width: 100%;
-      width: auto; }
+      width: auto;
+      margin: auto; }
   #content .section .about {
     font-size: 18px;
     font-weight: normal;
@@ -393,6 +416,10 @@ footer {
     padding: 5px 0;
     font-size: 18px;
     margin: 25px 0 0px; }
+
+  input, textarea {
+    padding: 5px !important;
+    font-size: 18px !important; }
 
   header .menuContainer {
     display: block !important;
